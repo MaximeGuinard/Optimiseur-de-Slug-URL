@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimiseur de Slug URL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Optimiseur de Slug URL</h1>
+        
+        <div class="input-group">
+            <label for="text-input">Entrez vos textes (un par ligne) :</label>
+            <textarea 
+                id="text-input" 
+                rows="6" 
+                placeholder="Exemple:
+Votre premier texte ici ! (àéè)
+Un deuxième texte à convertir
+Encore un autre texte..."
+            ></textarea>
+        </div>
+
+        <div class="options-container">
+            <h3>Options de conversion</h3>
+            <div class="options">
+                <div class="options-column">
+                    <h4>Formatage basique</h4>
+                    <label>
+                        <input type="checkbox" id="lowercase" checked>
+                        Minuscules
+                    </label>
+                    <label>
+                        <input type="checkbox" id="remove-accents" checked>
+                        Supprimer les accents
+                    </label>
+                    <label>
+                        <input type="checkbox" id="remove-special" checked>
+                        Supprimer les caractères spéciaux
+                    </label>
+                </div>
+                
+                <div class="options-column">
+                    <h4>Options avancées</h4>
+                    <label>
+                        <input type="checkbox" id="trim-spaces" checked>
+                        Supprimer espaces début/fin
+                    </label>
+                    <label>
+                        <input type="checkbox" id="remove-numbers">
+                        Supprimer les chiffres
+                    </label>
+                    <label>
+                        <input type="checkbox" id="max-length">
+                        Limiter longueur à
+                        <input type="number" id="max-length-value" value="50" min="1" max="200">
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="output-group">
+            <label for="slug-output">Slugs générés :</label>
+            <div class="output-container">
+                <textarea 
+                    id="slug-output" 
+                    rows="6" 
+                    readonly 
+                    placeholder="Les slugs apparaîtront ici"
+                ></textarea>
+                <button id="copy-button" title="Copier">
+                    📋
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
